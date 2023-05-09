@@ -22,7 +22,7 @@ public class HourlyEmployee extends Employee {
     }
 
     // Business or Action Methods.  These perform business tasks
-
+    @Override
     public void pay() {
         System.out.println(getName() + " is paid hourly " + (getRate() * getHours()));
     }
