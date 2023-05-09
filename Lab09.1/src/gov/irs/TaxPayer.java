@@ -17,8 +17,12 @@ package gov.irs;
  *   If the IRS were to change tax rates, we would only need to change that here.
  */
 public interface TaxPayer {
-    public static final double HOURLY_TAX_RATE = 0.25;
-    public static final double SALARIED_TAX_RATE = 0.30;
+    double HOURLY_TAX_RATE = 0.25;
+    double SALARIED_TAX_RATE = 0.30;
 
-    public void payTaxes();
+    void payTaxes();
+
+    default void fileReturn() {
+        System.out.println("Return filed by US Mail");
+    }
 }
