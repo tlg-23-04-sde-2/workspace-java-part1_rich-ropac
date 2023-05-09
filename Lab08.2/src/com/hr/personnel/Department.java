@@ -60,6 +60,23 @@ public class Department {
         }
     }
 
+    /*
+     *  "Forced" holiday break.
+     *  For all employees that are salaried, make them take vacation.
+     */
+    public void holidayBreak() {
+        for (int i = 0; i < currentIndex; i++) {
+            // if employees[i] is really a SalariedEmployee object, then
+            // "downcast" the Employee reference to more specific type SalariedEmployee
+            // otherwise we could blow up at runtime with ClassCastException
+            // Executive is an instanceof SalariedEmployee
+            if (employees[i] instanceof SalariedEmployee)  {
+                SalariedEmployee semp = (SalariedEmployee) employees[i];
+                semp.takeVacation();
+            }
+        }
+    }
+
     // helper method to add an Employee to the array
     public void addEmployee(Employee emp) {      // 'emp' is a REFERENCE to an object
         employees[currentIndex++] = emp;
