@@ -50,7 +50,7 @@ class TelevisionClient {
         System.out.println();
 
         // try out their toString() methods
-        System.out.println(tv1.toString());
+        System.out.println(tv1);
         System.out.println(tv2);  // toString() automatically called
         System.out.println(tv3);
         System.out.println();

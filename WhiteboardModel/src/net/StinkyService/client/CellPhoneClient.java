@@ -40,8 +40,8 @@ class CellPhoneClient {
 
         //Print out the properties for each object
         System.out.println();
-        System.out.println(cellPhone1.toString());
-        System.out.println(cellPhone2.toString());
-        System.out.println(cellPhone3.toString());
+        System.out.println(cellPhone1);
+        System.out.println(cellPhone2);
+        System.out.println(cellPhone3);
     }
 }

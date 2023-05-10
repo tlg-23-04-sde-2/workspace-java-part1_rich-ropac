@@ -34,7 +34,7 @@ public class Television {
     private DisplayType display = DisplayType.LED;
 
     // Television HAS-A Tuner
-    private Tuner tuner = new Tuner();  // instantiated internally, not exposed (via get/set)
+    private final Tuner tuner = new Tuner();  // instantiated internally, not exposed (via get/set)
 
     // CONSTRUCTORS - special methods that get called when the client says "new"
     public Television() {

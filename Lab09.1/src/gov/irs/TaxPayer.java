@@ -19,8 +19,13 @@ package gov.irs;
 public interface TaxPayer {
     double HOURLY_TAX_RATE = 0.25;
     double SALARIED_TAX_RATE = 0.30;
+    double STANDARD_DEDUCTION = 7500.0;
 
     void payTaxes();
+
+    default public double getStandardDeduction() {
+        return STANDARD_DEDUCTION;
+    }
 
     default void fileReturn() {
         System.out.println("Return filed by US Mail");
