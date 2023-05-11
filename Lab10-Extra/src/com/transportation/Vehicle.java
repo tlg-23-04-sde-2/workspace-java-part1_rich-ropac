@@ -2,7 +2,7 @@ package com.transportation;
 
 public abstract class Vehicle {
     // INSTANCE VARIABLES
-    private String vin;
+    private final String vin;
 
     // CONSTRUCTORS
     public Vehicle(String vin) {
