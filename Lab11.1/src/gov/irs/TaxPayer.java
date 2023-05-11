@@ -23,7 +23,7 @@ public interface TaxPayer {
 
     void payTaxes();
 
-    default public double getStandardDeduction() {
+    default double getStandardDeduction() {
         return STANDARD_DEDUCTION;
     }
 
