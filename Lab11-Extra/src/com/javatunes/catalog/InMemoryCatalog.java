@@ -10,6 +10,7 @@ package com.javatunes.catalog;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 
 // OF COURSE THIS CLASS DOESN'T COMPILE
@@ -38,6 +39,56 @@ public class InMemoryCatalog implements Catalog {
         new MusicItem(18L, "Escape",                    "Journey",                   "1981-02-25", 11.97, MusicCategory.CLASSIC_ROCK))
     );
 
+    @Override
+    public MusicItem findById(Long id) {
+        // return value
+        MusicItem result = null;
+
+        for (MusicItem item : catalogData) {
+            if (item.getId().equals(id)) {
+                result = item;
+                break;
+            }
+        }
+
+        return result;
+    }
+
+    @Override
+    public Collection<MusicItem> findByKeyword(String keyword) {
+         //return result
+        Collection<MusicItem> result = new ArrayList<>();
+        for (MusicItem currentItem : catalogData) {
+            if (currentItem.getTitle().contains(keyword)  || currentItem.getArtist().contains(keyword)) {
+                result.add(currentItem);
+            }
+        }
+
+        return result;
+    }
+
+    @Override
+    public Collection<MusicItem> findByCategory(MusicCategory category) {
+        //return variable
+        Collection<MusicItem> result = new ArrayList<>();
+        for (MusicItem item: catalogData) {
+            if (item.getMusicCategory().equals(category)) {
+                result.add(item);
+            }
+        }
+
+        return result;
+    }
+
+    @Override
+    public int size() {
+        return catalogData.size();
+    }
+
+    @Override
+    public Collection<MusicItem> getAll() {
+        return catalogData.subList(0,catalogData.size());
+    }
 
     /**
      * After you've satisfied your contractual obligations above, do these additional tasks.
@@ -65,22 +116,38 @@ public class InMemoryCatalog implements Catalog {
      * TASK: find all MusicItems where title is same as artist.
      * For example, Madonna's first album is simply titled, "Madonna."
      */
+      public Collection<MusicItem> findSelfTitleAlbums() {
+          Collection<MusicItem> result = new ArrayList<>();
 
+          return result;
+      }
 
     /**
      * TASK: find all "rock" items whose price is less than or equal to the specified price.
      */
+      public Collection<MusicItem> findRockItemsAtSpecifiedPrice(double price) {
+          Collection<MusicItem> result = new ArrayList<>();
 
+          return result;
+      }
 
     /**
      * TASK: how many items of the specified genre (MusicCategory) do we sell?
      */
+    public int genreCount(MusicCategory genre) {
+        int count = 0;
 
+        return count;
+
+    }
 
     /**
      * TASK: determine average price of our low-cost, extensive catalog of music.
      */
+     public double averagePrice() {
 
+         return 0.0;
+     }
 
     /**
      * TASK: find the cheapest item with the specified genre (MusicCategory).
